@@ -5,7 +5,6 @@ import 'Triangulo.dart';
 
 void main(List<String> arguments) {
   List<Figura> figuras = [];
-  double totalArea = 0;
 
   Circulo circulo = Circulo(3, 4, 5);
   figuras.add(circulo);
@@ -35,9 +34,13 @@ void main(List<String> arguments) {
   triangulo.getTipo();
   print('');
 
+  print('Área total dos objetos: ${calculaAreaTotal(figuras)}');
+}
+
+double calculaAreaTotal(List<Figura> figuras) {
+  double totalArea = 0;
   for (var figura in figuras) {
     totalArea += figura.area();
   }
-
-  print('Área total dos objetos: $totalArea');
+  return totalArea;
 }
